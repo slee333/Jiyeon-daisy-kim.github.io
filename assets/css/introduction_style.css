@@ -165,15 +165,20 @@ a:hover{
 
 .contact {
     display: flex;
-    flex-direction: column; /* 세로로 정렬 */
-    justify-content: center; /* 세로 가운데 정렬 */
-    align-items: center; /* 가로 가운데 정렬 */
-    /* 화면의 전체 높이를 사용 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    margin: 0 auto; /* 자동 여백 설정으로 가운데 배치 */
+    margin: 0 auto;
+}
+
+/* a 태그의 기본 상태 */
+.contact a {
+    color: black;
     text-decoration: none;
-    color: inherit;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
 }
 
 .contact a:hover{
@@ -183,6 +188,7 @@ a:hover{
 .contact a:visited{
     color: black;
 }
+
 
 .contact p {
     font-size: 13px;
