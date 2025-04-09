@@ -8,6 +8,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* 네비게이션 관련 */
