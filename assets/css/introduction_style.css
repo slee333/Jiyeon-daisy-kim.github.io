@@ -196,3 +196,31 @@ a:hover{
     font-size: 13px;
 }
 
+
+
+
+/* 데이지 꽃 떨어지는 자바스크립트*/
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    90% {
+        opacity: 1; /* 거의 다 떨어질 때까지 보이게 */
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0; /* 바닥 근처에서 사라지게 */
+    }
+}
+
+.flower {
+    position: fixed; /* 화면 내에서만 떨어지도록 설정 */
+    top: -50px; /* 화면 위에서 시작 */
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    animation: fall linear infinite;
+    object-fit: contain; /* 이미지 비율 유지 */
+    z-index: -1; /* 본문 뒤로 배치 */
+}
