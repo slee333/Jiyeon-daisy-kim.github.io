@@ -181,7 +181,20 @@ a:hover{
     font-style: italic;
 }
 
-.zone3{
+.trailer-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 유지 */
+    height: 0;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+.trailer-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .zone3-1{
