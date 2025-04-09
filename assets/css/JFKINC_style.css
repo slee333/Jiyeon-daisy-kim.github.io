@@ -118,7 +118,9 @@ a:hover{
     text-decoration: none; /* 밑줄 제거 */
     display: block; /* 블록 요소로 표시 */
     font-size: 14px;
+    padding-left: 5%;
 }
+
 .dropdown-content a:hover {
     background-color: #f1f1f1; /* 마우스를 올리면 배경색 변경 */
 }
@@ -139,7 +141,6 @@ a:hover{
 .zone1-1{
     font-size: 70px;
     font-weight: 700 !important;
-    margin-bottom: ;
 }
 
 .zone1-2{
