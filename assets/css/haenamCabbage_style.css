@@ -99,7 +99,6 @@ a:hover{
     color: darkgray;
     transition: 0.3s;
 }
-
 .dropdown-content {
     display: none; /* 드롭다운을 기본적으로 숨김 */
     position: absolute;
@@ -121,9 +120,6 @@ a:hover{
     font-size: 14px;
     padding-left: 5%;
 }
-
-
-
 .dropdown-content a:hover {
     background-color: #f1f1f1; /* 마우스를 올리면 배경색 변경 */
 }
@@ -147,12 +143,13 @@ a:hover{
 
 
 .dashboard{
-    margin-left: 10%;
-    margin-right: 15%;
+    
     margin-top: 5%;
     background-color: #328a63;
     display: flex;
     flex-direction: column;
+    margin-left: 10%;
+    margin-right: 15%;
 }
 
 .zone1 {

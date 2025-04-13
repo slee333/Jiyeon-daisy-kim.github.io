@@ -163,23 +163,52 @@ a:hover{
 }
 
 .zone1-2{
-    margin-top: 500px;
-    margin-left: 5%;
+    margin-top: 10%;
+    margin-left: 4%;
+    
+}
+
+.zone1-2 i{
     font-size: 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.zone1-2-1{
+    margin-top: 0%;
+    font-size: 15px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.zone1-2-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 1px solid black;
+    margin-top: 160%;
+}
+
+.zone1-2-2-1{
+    margin-left: 2%;
+    font-size: 12px;
+    font-style: italic;
 }
 
 .zone2{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border-left: 1px solid black;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 .zone2-1{
-    margin-left: 2%;
-    font-size: 12px;
-    font-style: italic;
+    font-size: 15px;
+}
+
+.zone2-2{
+    margin-top: 2%;
+    font-size: 15px;
+    font-family: 'Pretendard', sans-serif;
 }
 
 .trailer-video {
@@ -198,14 +227,42 @@ a:hover{
     height: 100%;
 }
 
-.zone3-1{
-    width: 80% !important;
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    align-self: flex-start;
+    margin-left: 0S;
+}
+  
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    
-    margin-top: 2%;
 }
 
-.zone4{
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;       /* 버튼 화살표 색상 */
+    z-index: 10;        /* 다른 요소 위에 나오게 */
+    width: 44px;
+    height: 44px;
+}
 
-    font-size: 12px;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: rgba(255,255,255,0.6);
+    font-size: 24px; /* 화살표 크기 */
+}
+
+.swiper-scrollbar{
+    display: none !important;
+}
+
+.swiper-pagination-bullet{
+    background: rgba(255,255,255, 0.9) !important;
+}
+
+.swiper-pagination-bullet-active{
+    background: rgba(255,255,255, 0.6) !important;
 }

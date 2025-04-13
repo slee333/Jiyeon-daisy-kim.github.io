@@ -20,7 +20,6 @@ body{
     background-position: center;
     overflow: hidden;
 
-
 }
 
 .frame{
@@ -30,8 +29,6 @@ body{
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
-
-/* 네비게이션 관련 */
 
 .navigator{
     display: flex;
@@ -60,7 +57,7 @@ ul{
 
 .site-name{
     margin:0;
-    font-size: 22px;
+    font-size: 24px;
     color: white;
 }
 
@@ -70,7 +67,7 @@ ul{
 }
 
 .nav-menu{
-    font-size: 16px;
+    font-size: 18px;
     color: white;
 }
 

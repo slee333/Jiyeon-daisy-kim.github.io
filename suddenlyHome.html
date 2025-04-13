@@ -2,15 +2,58 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Daisyeon</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/suddenlyHome_style.css">
 	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
 	
+	<!-- pretendad 글씨체 -->
+	<script>
+		(function(d) {
+		  var config = {
+			kitId: 'qme8xbq',
+			scriptTimeout: 3000,
+			async: true
+		  },
+		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+	  </script>
+	  
+	  <!-- swiper 슬라이드 -->
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+	/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  const swiper = new Swiper('.swiper', {
+			direction: 'horizontal', // vertical이면 세로 슬라이드
+			loop: true,
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable: true
+			},
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev'
+			},
+			scrollbar: {
+			  el: '.swiper-scrollbar'
+			},
+			autoplay: {
+			  delay: 4000,
+			  disableOnInteraction: false
+			}
+		  });
+		});
+	</script>
+
 	<div class="frame">
 		<nav class="navigator">
 			<h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
@@ -37,34 +80,48 @@
 			Yeon for the root</p>
 		</div>
 
-
-		
 		<div class="dashboard">
 			<div class="zone1"> 
 				<img class="zone1-1" src="assets/images/suddenly_home_poster_1_2.jpg">
 				<div class="zone1-2">
 					<i><strong>SUDDENLY, HOME</strong></i>
+					<div class="zone1-2-1">
+						<p>갑자기 분위기 스바시바</p>
+					</div>
+					<div class="zone1-2-2">
+						<div class="zone1-2-2-1">
+							<p>Directed, Written by Jiyeon Kim
+								<br>Sponsored by Korean Film Council
+								<br>
+							</p>
+						</div>
+						<div class="zone1-2-2-1">
+							<p>2024 Berlin Lift Off Film Festival
+								<br>2024 Indie Film Fest Final Awards Nominee
+								<br>2024 Asian Film Festival of Dallas
+								<br>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<div class="zone2">
 				<div class="zone2-1">
-					<p>Directed, Written by Jiyeon Kim
-						<br>Sponsored by Korean Film Council
-						<br>
-					</p>
+					Seungyeon returns home, hoping to reconcile with her estranged mother,
+					 <br>only to face verbal abuse.
+					 <br>But when she discovers her mother has dementia,
+					 <br>resentment gives way to regret—and an ordinary day becomes a quiet reunion.
 				</div>
-				<div class="zone2-1">
-					<p>2024 Berlin Lift Off Film Festival
-						<br>2024 Indie Film Fest Final Awards Nominee
-						<br>2024 Asian Film Festival of Dallas
-						<br>
-					</p>
-				</div>
-				<div class="zone2-1">
-					<p>Synopsis: Seungyeon wants to meet Minsoo, her mother.
-					</p>
+				<div class="zone2-2">
+					승연은 오래 전에 가출한 집에, 엄마의 생일을 맞아서 화해를 위해 찾아간다.
+					<br>하지만 엄마인 민수는 승연에게 다짜고짜 욕을 한다.
+					<br>상처받은 승연은 자신의 동생, 지원에게 엄마의 근황을 묻는다.
+					<br>엄마가 사실은 치매를 앓고 있었음을 알게 된 승연은
+					<br>미안함과 섭섭함을 토로하지만 민수는 함께 맞이한 ‘그냥의 오늘’에 기뻐한다.
 				</div>
 			</div>
+			
 			
 			<div class="trailer-video">
 				<iframe src="https://player.vimeo.com/video/1009516569" 
@@ -72,15 +129,33 @@
 				</iframe>
 			</div>
 
-			<div class="zone3">
-				<img class="zone3-1" src="assets/images/suddenly_home_poster-2.png">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+				  <div class="swiper-slide">
+					<img src="assets/images/GAB still1.png" alt="이미지1" />
+				  </div>
+				  <div class="swiper-slide">
+					<img src="assets/images/Suddenly, Home Still 1.jpg" alt="이미지2" />
+				  </div>
+				  <div class="swiper-slide">
+					<img src="assets/images/Suddenly, Home Still 2.jpg" alt="이미지3" />
+				  </div>
+				  <div class="swiper-slide">
+					<img src="assets/images/Suddenly, Home Still 3.jpg" alt="이미지3" />
+				  </div>
+				  <div class="swiper-slide">
+					<img src="assets/images/Suddenly, Home Still 4.jpg" alt="이미지3" />
+				  </div>
+				</div>
+			
+				<!-- 옵션 UI들 -->
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-scrollbar">
+				</div>
 			</div>
-			<div class="zone4">
-				<p>
-					<br>This film is a re-edited version of a film originally made on a 30-minute basis as a graduation thesis film.
-					<br>I wanted to capture a society in which the elderly with dementia cannot adapt to society with a warmer gaze.
-				</p>
-			</div>
+
 		</div>
 	
 
