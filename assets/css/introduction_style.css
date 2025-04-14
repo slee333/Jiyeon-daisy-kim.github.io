@@ -10,61 +10,6 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.navigator{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    position: fixed;
-    width: 80%;
-    font-family: 'Montserrat', sans-serif;
-}
-
-li{
-    display: inline;
-    align-self: center;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-ul{
-    display: flex;
-    margin: 0%;
-    padding: 0%;
-    flex-wrap: nowrap;
-}
-
-.site-name{
-    margin:0;
-    font-size: 24px;
-    color: black;
-}
-
-.site-name a{
-    color: black;
-    text-decoration: none;
-}
-
-.nav-menu{
-    font-size: 18px;
-    color: black;
-}
-
-.triangle{
-    font-size: 10px;
-    margin-left: 3px;
-}
-
-a{
-    text-decoration: none;
-}
-
-a:hover{
-    color: gray;
-    transition: 0.3s;
-}
-
 .contact-info {
     padding: 0.8%;
     font-size: 16px;
@@ -100,31 +45,6 @@ a:hover{
     transition: 0.3s;
 }
 
-.dropdown-content {
-    display: none; /* 드롭다운을 기본적으로 숨김 */
-    position: absolute;
-    background-color: white; /* 드롭다운 배경색 */
-    min-width: 160px; /* 드롭다운의 최소 너비 */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1; /* 다른 요소 위에 쌓이도록 설정 */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block; /* 마우스를 올리면 드롭다운 표시 */
-}
-
-.dropdown-content a {
-    color: black; /* 링크 색상 */
-    padding: 12px 16px; /* 패딩 */
-    text-decoration: none; /* 밑줄 제거 */
-    display: block; /* 블록 요소로 표시 */
-    font-size: 14px;
-    padding-left: 5%;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1; /* 마우스를 올리면 배경색 변경 */
-}
 
 
 /*  ------------------------------------- */

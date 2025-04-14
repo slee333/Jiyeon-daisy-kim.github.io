@@ -7,7 +7,12 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/suddenlyHome_style.css">
 	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
-	
+
+	<!-- montserrat 글씨체 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	<!-- pretendad 글씨체 -->
 	<script>
 		(function(d) {
@@ -18,7 +23,7 @@
 		  },
 		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 		})(document);
-	  </script>
+	</script>
 	  
 	  <!-- swiper 슬라이드 -->
 	<link
@@ -26,6 +31,8 @@
 		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 	/>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+	<script src="assets/js/nav-bar.js" defer></script>
 </head>
 
 <body>
@@ -59,22 +66,7 @@
 	
 
 	<div class="frame">
-		<nav class="navigator">
-			<h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
-			<ul>
-				<li><a href="index.html" class ="nav-menu">HOME</a></li>
-				<li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
-				<li class="dropdown">
-					<a href="film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
-					<div class="dropdown-content">
-						<a href="mejfk-youicn/index.html">Me:JFK, You:ICN</a>
-						<a href="haenamCabbage.html">Haenam Cabbage</a>
-						<a href="suddenlyHome.html">Suddenly, Home</a>
-						<a href="caseOfR.html">Case of 'r'</a>
-					</div>
-				</li>
-			</ul>
-		</nav>
+		<nav-bar></nav-bar>
 
 		<div class="fixed-text">
 			<p><strong>My life</strong> is an adventure,<br>
@@ -105,7 +97,6 @@
 						<div class="zone1-2-2-1">
 							<p>2024 Berlin Lift Off Film Festival
 								<br>2024 Indie Film Fest Final Awards Nominee
-								<br>2024 Asian Film Festival of Dallas
 								<br>
 							</p>
 						</div>

@@ -1,0 +1,114 @@
+class NavBar extends HTMLElement {
+    constructor() {
+      super();
+  
+      const shadow = this.attachShadow({ mode: 'open' });
+  
+      // 현재 페이지가 index.html인지 확인
+      const isIndexPage = window.location.pathname.endsWith('index.html');
+  
+      shadow.innerHTML = `
+        <style>
+          .navigator {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            position: fixed;
+            width: 80%;
+            font-family: 'Montserrat', sans-serif;
+          }
+  
+          .site-name {
+            margin: 0;
+            font-size: 24px;
+            color: ${isIndexPage ? 'white' : 'black'};
+          }
+  
+          .site-name a {
+            color: ${isIndexPage ? 'white' : 'black'};
+            text-decoration: none;
+          }
+  
+          .navigator ul {
+            display: flex;
+            margin: 0%;
+            padding: 0%;
+            flex-wrap: nowrap;
+          }
+  
+          .navigator li {
+            display: inline;
+            align-self: center;
+            margin-left: 5%;
+            margin-right: 5%;
+          }
+  
+          .navigator a {
+            text-decoration: none;
+          }
+  
+          .navigator a:hover {
+            color: gray;
+            transition: 0.3s;
+          }
+  
+          .nav-menu {
+            font-size: 18px;
+            color: ${isIndexPage ? 'white' : 'black'};
+          }
+  
+          .triangle {
+            font-size: 10px;
+            margin-left: 3px;
+          }
+  
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+  
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+  
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            padding-left: 5%;
+          }
+  
+          .dropdown-content a:hover {
+            background-color: #f1f1f1;
+          }
+        </style>
+  
+        <nav class="navigator">
+          <h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
+          <ul>
+            <li><a href="index.html" class="nav-menu">HOME</a></li>
+            <li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
+            <li class="dropdown">
+              <a href="film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
+              <div class="dropdown-content">
+                <a href="mejfk-youicn/index.html">Me:JFK, You:ICN</a>
+                <a href="haenamCabbage.html">Haenam Cabbage</a>
+                <a href="suddenlyHome.html">Suddenly, Home</a>
+                <a href="caseOfR.html">Case of 'r'</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      `;
+    }
+  }
+  
+  customElements.define('nav-bar', NavBar);
