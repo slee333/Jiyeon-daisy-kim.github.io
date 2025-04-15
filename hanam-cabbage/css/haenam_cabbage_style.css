@@ -20,9 +20,9 @@ body{
  }
  
  .footer-image {
-     width: 50px; /* 이미지 크기를 조절합니다 */
+     width: 50px; /* 이미지 크기를 조절 */
      height: auto; /* 비율을 유지하면서 크기 조정 */
-     vertical-align: middle; /* 이미지와 텍스트가 같은 라인에 오도록 합니다 */
+     vertical-align: middle; /* 이미지와 텍스트가 같은 라인에 오게 함 */
  }
  
  .contact-info-title{
@@ -186,7 +186,7 @@ body{
     padding-bottom: 56.25%; /* 16:9 비율 유지 */
     height: 0;
     overflow: hidden;
-    max-width: 80%;
+    max-width: 90%;
 }
 
 .trailer-video iframe {
