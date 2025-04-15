@@ -38,8 +38,8 @@ class NavBar extends HTMLElement {
         .navigator li {
           display: inline;
           align-self: center;
-          margin-left: 5%;
-          margin-right: 5%;
+          margin-left: 3%;
+          margin-right: 3%;
         }
 
         .navigator a {
