@@ -129,7 +129,7 @@
 				</div>
 				<div class ="zone3-2">
 					<div class="zone3-2-1">
-						<img src="hanam-cabbage/img/Haenam_Poster_Low.jpg"></imb>
+						<img src="hanam-cabbage/img/Haenam_Poster_Low.jpg" id="posterImg" style="cursor: pointer;">
 					</div>
 					<div class="zone3-2-2">
 						<div class="zone3-2-2-1">
@@ -172,8 +172,31 @@
 				<a href="https://www.youtube.com/@daisy_yeon">Youtube</a>
 			</p>
 		</footer>
-
-		
 	</div>
+
+	<!-- 포스터 확대용 모달 -->
+	<div id="posterModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+	<img id="posterModalImg" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 0 10px white;">
+  	</div>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const poster = document.getElementById('posterImg');
+		const modal = document.getElementById('posterModal');
+		const modalImg = document.getElementById('posterModalImg');
+	
+		poster.addEventListener('click', function () {
+		modal.style.display = 'flex';
+		modalImg.src = this.src;
+		});
+	
+		modal.addEventListener('click', function (e) {
+		// 이미지 밖 영역 클릭 시 닫기
+		if (e.target === modal) {
+			modal.style.display = 'none';
+		}
+		});
+	});
+	</script>
+
 </body>
 </html>
