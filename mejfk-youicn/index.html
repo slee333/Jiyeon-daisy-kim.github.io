@@ -5,8 +5,18 @@
 	<meta name="viewport" content="width-device-width, initial-scale=1.0">
 	<title>Daisyeon</title>
 
+		<!-- montserrat 글씨체 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+
 	<!-- Espacio Novo 글씨체-->
 	<link rel="stylesheet" href="../assets/css/espacio_novo_font.css">
+
+	<!-- 네비게이션 바-->
+	<script src="../assets/js/nav-bar-for-file-structure.js" defer></script>
+
 
 	<link rel="stylesheet" type="text/css" href="../assets/css/JFKINC_style.css">
 	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
@@ -14,22 +24,7 @@
 
 <body>
 	<div class="frame">
-		<nav class="navigator">
-			<h3 class="site-name"><a href="../index.html">Daisyeon</a></h3>
-			<ul>
-				<li><a href="../index.html" class ="nav-menu">HOME</a></li>
-				<li><a href="../intoduction.html" class="nav-menu">Introduction</a></li>
-				<li class="dropdown">
-					<a href="../film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
-					<div class="dropdown-content">
-						<a href="index.html">Me:JFK, You:ICN</a>
-						<a href="../haenamCabbage.html">Haenam Cabbage</a>
-						<a href="../suddenlyHome.html">Suddenly, Home</a>
-						<a href="../caseOfR.html">Case of 'R'</a>
-					</div>
-				</li>
-			</ul>
-		</nav>
+		<nav-bar></nav-bar>
 		
 		<div class="fixed-text">
 			<div class="zone2">

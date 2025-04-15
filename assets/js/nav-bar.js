@@ -57,7 +57,12 @@ class NavBar extends HTMLElement {
   
           .nav-menu {
             font-size: 18px;
-            color: ${isIndexPage ? 'white' : 'black'};
+            color: ${isIndexPage ? 'white' : '#C9C9C9'};
+          }
+
+          .nav-menu.active {
+            color: black;
+            font-weight: bold; /* 선택사항: 강조 효과 */
           }
   
           .triangle {
@@ -97,6 +102,7 @@ class NavBar extends HTMLElement {
           <ul>
             <li><a href="index.html" class="nav-menu">HOME</a></li>
             <li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
+            <li><a href="art-work/" class="nav-menu">Artwork</a></li>
             <li class="dropdown">
               <a href="film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
               <div class="dropdown-content">
@@ -109,7 +115,36 @@ class NavBar extends HTMLElement {
           </ul>
         </nav>
       `;
-    }
-  }
+
+
+      const filmRelatedPages = [
+        'film.html',
+        'mejfk-youicn/index.html',
+        'haenamCabbage.html',
+        'suddenlyHome.html',
+        'caseOfR.html'
+      ];
+
+      const currentPage = window.location.pathname.split('/').slice(-2).join('/'); // 폴더/파일명 모두 포함
+      const simplePage = window.location.pathname.split('/').pop(); // 파일명만 (예: caseOfR.html)
+
+      // nav-menu 링크에 active 클래스 추가
+      const links = shadow.querySelectorAll('.nav-menu');
+      links.forEach(link => {
+        const href = link.getAttribute('href');
   
-  customElements.define('nav-bar', NavBar);
+        // FILM 관련 페이지면 film 메뉴에 active 부여
+        if (href === 'film.html' && (filmRelatedPages.includes(currentPage) || filmRelatedPages.includes(simplePage))) {
+          link.classList.add('active');
+        }
+
+        // 일반 페이지 (home, intro 등)
+        if (href === simplePage) {
+          link.classList.add('active');
+        }
+      });
+      
+  }
+}
+
+customElements.define('nav-bar', NavBar);
