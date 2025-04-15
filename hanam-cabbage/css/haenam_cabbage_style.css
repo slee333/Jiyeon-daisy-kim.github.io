@@ -128,15 +128,23 @@ body{
 }
 
 .zone3-2-1{
-    width: 50%;
+    width: 30%;
     margin-top: 5vh;
 }
 
-
-
 .zone3-2-1 img{
-    width: 40%;
+    width: 60%;
 }
+
+.zone3-2-2 {
+    width: 70;
+    display: flex;
+    margin-top: 5vh;
+    padding-top: 0;
+    flex-direction: column;
+}
+
+
 
 .swiper {
     width: 65%;
