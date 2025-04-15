@@ -23,6 +23,7 @@ class NavBar extends HTMLElement {
           .site-name {
             margin: 0;
             font-size: 24px;
+            font-family: 'Espacio Novo', sans-serif;
             color: ${isIndexPage ? 'white' : 'black'};
           }
   
