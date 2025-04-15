@@ -137,9 +137,8 @@ body{
 }
 
 .swiper {
-    width: 80%;
+    width: 65%;
     height: auto;
-    margin-top: 30px;
     align-self: flex-start;
     margin-left: 0S;
 }
@@ -174,4 +173,24 @@ body{
 
 .swiper-pagination-bullet-active{
     background: rgba(255,255,255, 0.6) !important;
+}
+
+.zone4{
+    margin-left: 10%;
+}
+
+.trailer-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 유지 */
+    height: 0;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+.trailer-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
