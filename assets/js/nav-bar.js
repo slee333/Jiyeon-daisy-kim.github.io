@@ -66,8 +66,12 @@ class NavBar extends HTMLElement {
           }
   
           .nav-menu {
+            display: inline-flex;        /* 핵심! 텍스트와 이미지를 가로 정렬 */
+            align-items: center;         /* 세로 정렬 */
             font-size: 18px;
             color: ${isIndexPage ? 'white' : '#C9C9C9'};
+            text-decoration: none;
+            font-weight: bold;
           }
 
           .nav-menu.active {
@@ -75,9 +79,10 @@ class NavBar extends HTMLElement {
             font-weight: bold; /* 선택사항: 강조 효과 */
           }
   
-          .triangle {
-            font-size: 10px;
-            margin-left: 3px;
+          .flower-icon {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
           }
   
           .dropdown-content {
@@ -114,7 +119,10 @@ class NavBar extends HTMLElement {
             <li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
             <li><a href="art-work/" class="nav-menu">Artwork</a></li>
             <li class="dropdown">
-              <a href="film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
+              <a href="film.html" class="nav-menu">
+                FILM
+                <img class="flower-icon" src="assets/images/daisy_flower.png" alt="flower icon" />
+              </a>
               <div class="dropdown-content">
                 <a href="mejfk-youicn/index.html">Me:JFK, You:ICN</a>
                 <a href="haenamCabbage.html">Haenam Cabbage</a>
