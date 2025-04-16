@@ -1,5 +1,7 @@
 body{
     background-color: white;
+    overflow-x: hidden ;
+    overflow-y: hidden;
 }
 
 .frame{
@@ -71,7 +73,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 10%;
     margin-right: 15%;
 }
