@@ -1,6 +1,7 @@
 
 body{
     background-color: white;
+    overflow-x: hidden;
  }
  
  .frame{
@@ -10,6 +11,7 @@ body{
      min-height: 100vh;
      font-family: 'Montserrat', sans-serif;
  }
+ 
  
  .contact-info {
      margin-top: 20px;
@@ -68,8 +70,7 @@ body{
 
 
 .dashboard{
-    margin-top: 5%;
-    
+    margin-top: 3%;
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +85,7 @@ body{
 .zone2{
     position: relative; /* 페이지 구조상 위치를 절대상태로 변경 */
     background-color: #328a63;
-    width: 99.2700163vw; 
+    width: 100vw; 
     left: 50%;
     transform: translateX(-50%); /*자신의 너비와 높이만큼 빼서 진짜 가운데정렬*/
 }
@@ -150,7 +151,7 @@ body{
     width: 65%;
     height: auto;
     align-self: flex-start;
-    margin-left: 0S;
+    margin-left: 0;
 }
   
 .swiper-slide img {
