@@ -63,6 +63,7 @@ class NavBar extends HTMLElement {
         .nav-menu {
           font-size: 18px;
           color: #C9C9C9;
+          font-weight: bold;
         }
 
         .nav-menu.active {
