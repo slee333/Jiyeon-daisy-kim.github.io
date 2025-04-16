@@ -121,7 +121,7 @@ class NavBar extends HTMLElement {
             <li><a href="art-work/" class="nav-menu">Artwork</a></li>
             <li class="dropdown">
               <a href="film.html" class="nav-menu">
-                FILM
+                Film
                 <img class="flower-icon" src="assets/images/daisy_flower.png" alt="flower icon" />
               </a>
               <div class="dropdown-content">

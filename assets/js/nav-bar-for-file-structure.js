@@ -109,7 +109,7 @@ class NavBar extends HTMLElement {
           <li><a href="../intoduction.html" class="nav-menu">Introduction</a></li>
           <li><a href="../art-work/" class="nav-menu">Artwork</a></li>
           <li class="dropdown">
-            <a href="../film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
+            <a href="../film.html" class="nav-menu">Film<span class="triangle">▼</span></a>
             <div class="dropdown-content">
               <a href="../mejfk-youicn/index.html">Me:JFK, You:ICN</a>
               <a href="../haenamCabbage.html">Haenam Cabbage</a>
