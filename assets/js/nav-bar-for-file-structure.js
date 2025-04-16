@@ -106,9 +106,9 @@ class NavBar extends HTMLElement {
       <nav class="navigator">
         <h3 class="site-name"><a href="../index.html">Daisyeon</a></h3>
         <ul>
-          <li><a href="../" class="nav-menu">HOME</a></li>
+          <li><a href="../index.html" class="nav-menu">HOME</a></li>
           <li><a href="../intoduction.html" class="nav-menu">Introduction</a></li>
-          <li><a href="../art-work/" class="nav-menu">Artwork</a></li>
+          <li><a href="../art-work/index.html" class="nav-menu">Artwork</a></li>
           <li class="dropdown">
             <a href="../film.html" class="nav-menu">Film<span class="triangle">▼</span></a>
             <div class="dropdown-content">

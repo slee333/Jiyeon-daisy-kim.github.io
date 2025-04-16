@@ -13,7 +13,9 @@
 
 body{
     
-    background-image: url('https://drive.google.com/thumbnail?id=17VIZLGhgtsskdQRde2WbH29KncbVyyNX&sz=w1000');
+    background-image: url('/assets/images/Home_jfk_icn_bacground_img.png');
+    /*'https://drive.google.com/thumbnail?id=17VIZLGhgtsskdQRde2WbH29KncbVyyNX&sz=w1000'*/
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

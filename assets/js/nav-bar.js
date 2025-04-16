@@ -116,9 +116,9 @@ class NavBar extends HTMLElement {
         <nav class="navigator">
           <h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
           <ul>
-            <li><a href="/" class="nav-menu">HOME</a></li>
+            <li><a href="/index.html" class="nav-menu">HOME</a></li>
             <li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
-            <li><a href="art-work/" class="nav-menu">Artwork</a></li>
+            <li><a href="art-work/index.html" class="nav-menu">Artwork</a></li>
             <li class="dropdown">
               <a href="film.html" class="nav-menu">
                 Film
@@ -151,13 +151,21 @@ class NavBar extends HTMLElement {
       const links = shadow.querySelectorAll('.nav-menu');
       links.forEach(link => {
         const href = link.getAttribute('href');
-  
-        // FILM 관련 페이지면 film 메뉴에 active 부여
+      
+        // FILM 관련 페이지는 film 메뉴에 active 부여
         if (href === 'film.html' && (filmRelatedPages.includes(currentPage) || filmRelatedPages.includes(simplePage))) {
           link.classList.add('active');
         }
-
-        // 일반 페이지 (home, intro 등)
+      
+        // HOME 페이지는 다양한 형태로 접근 가능하므로 조건 보완
+        if (
+          (href === '/index.html' || href === 'index.html') &&
+          (simplePage === '' || simplePage === 'index.html')
+        ) {
+          link.classList.add('active');
+        }
+      
+        // 일반 페이지 (intro, artwork 등)
         if (href === simplePage) {
           link.classList.add('active');
         }
