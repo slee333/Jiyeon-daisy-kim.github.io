@@ -69,9 +69,10 @@ class NavBar extends HTMLElement {
             display: inline-flex;        /* 핵심! 텍스트와 이미지를 가로 정렬 */
             align-items: center;         /* 세로 정렬 */
             font-size: 18px;
+            font-weight: bold;
             color: ${isIndexPage ? 'white' : '#C9C9C9'};
             text-decoration: none;
-            font-weight: bold;
+            
           }
 
           .nav-menu.active {

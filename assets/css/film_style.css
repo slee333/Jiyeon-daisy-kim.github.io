@@ -106,6 +106,7 @@ body{
 
 .text-zone-2 a{
     color: black;
+    text-decoration: none;
 }
 
 .text-zone-2 a:visited{
