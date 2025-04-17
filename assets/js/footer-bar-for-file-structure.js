@@ -5,7 +5,7 @@ class FooterBar extends HTMLElement {
   
       shadow.innerHTML = `
         <style>
-            .contact-info {
+        .contact-info {
             padding: 0.8%;
             font-size: 16px;
             color: white;

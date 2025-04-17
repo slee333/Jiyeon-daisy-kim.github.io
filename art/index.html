@@ -6,51 +6,81 @@
 	<title>Daisyeon</title>
 
 	<!-- Espacio Novo 글씨체-->
-	<link rel="stylesheet" href="assets/css/espacio_novo_font.css">
-	
-	<link rel="stylesheet" type="text/css" href="css/art_work_style.css">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+	<link rel="stylesheet" href="../assets/css/espacio_novo_font.css">
 
-	<script src="../assets/js/nav-bar-for-file-structure.js" defer></script>
-
-	
+	<!-- pretendad 글씨체 -->
+	<script src="../assets/js/pretendad-font.js"></script>
 
 	<!-- montserrat 글씨체 -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-	<!-- pretendad 글씨체 -->
-	<script>
-		(function(d) {
-		  var config = {
-			kitId: 'qme8xbq',
-			scriptTimeout: 3000,
-			async: true
-		  },
-		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-		})(document);
-	</script>
+	<!-- favicon, css-->
+	<link rel="stylesheet" type="text/css" href="css/art_work_style.css">
+	<link rel="icon" href="../assets/images/favicon.png" type="image/png">
 
+	<!-- 네비게이션, footer dom js-->
+	<script src="../assets/js/footer-bar-for-file-structure.js" defer></script>
+	<script src="../assets/js/nav-bar-for-file-structure.js" defer></script>
 
-	<!-- swiper 슬라이드 -->
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-	/>
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  
-	<script src="assets/js/nav-bar.js" defer></script>
 
 </head>
 
 <body>
-	<div class = "frame">
-		<img src="img/404_under_construction.png">
+	<div class="frame">
+	  <nav-bar></nav-bar>
 	</div>
+	<main class="artwork-layout">
+		<section class="image-column" id="imageColumn">
+		  <!-- 이미지들이 여기에 계속 추가됨 -->
+		</section>
+	  
+		<section class="side-column">
+		  <!-- 설명 또는 비어 있는 공간 -->
+		</section>
+	</main>
+  
 
+	<script>
+		const imageColumn = document.getElementById('imageColumn');
+	  
+		const initialImages = [
+		  'img/i-really-hate-birthday-feelings/@back.png',
+		  'img/Sausage Twig.jpg'
+		];
+	  
+		// 초기 이미지 렌더링
+		function renderInitialImages() {
+		  initialImages.forEach(src => {
+			const img = document.createElement('img');
+			img.src = src;
+			img.classList.add('art-image');
+			imageColumn.appendChild(img);
+		  });
+		}
+	
+	  
+		// 초기 이미지 먼저 로드
+		renderInitialImages();
+	  
+		// 스크롤 감지용 센티넬
+		const sentinel = document.createElement('div');
+		sentinel.id = 'sentinel';
+		imageColumn.appendChild(sentinel);
+	  
+		// 인터섹션 옵저버 등록
+		const observer = new IntersectionObserver(entries => {
+		  if (entries[0].isIntersecting) {
+			loadMoreImages();
+		  }
+		});
+	  
+		observer.observe(sentinel);
 
+		
+	  </script>
 </body>
-
 </html>

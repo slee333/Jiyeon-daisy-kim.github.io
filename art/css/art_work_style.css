@@ -1,12 +1,44 @@
-
 body{
     background-color: white;
  }
  
- .frame{
+.frame{
      margin: 2% 10%;
      display: flex;
      flex-direction: column;
-     min-height: 100vh;
      font-family: 'Montserrat', sans-serif;
- }
+}
+
+.artwork-layout {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+  
+.image-column {
+    width: 307px;
+    overflow-y: auto;
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    scrollbar-width: none;
+}
+
+.image-column img {
+    width: auto;         /* 너비는 칼럼에 꽉 차게 */
+    height: 200px;       /* 세로 고정 */
+    object-fit: contain; /* 이미지 비율 유지 + 잘리지 않게 */
+
+}
+
+.image-column::-webkit-scrollbar {
+    display: none;
+}
+  
+.side-column {
+    width: calc(100% - 307px);
+    padding: 2%;
+    background-color: white;
+}
