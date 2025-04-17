@@ -31,49 +31,6 @@ body{
 }
 
 
-/* 맨 아래 이메일, 인스타그램 관련 */
-
-.contact-info {
-    position: fixed;
-    bottom: 0;
-    
-    padding: 0.8%;
-    font-size: 16px;
-    color: white;
-    background-color: transparent;
-}
-
-.footer-image {
-    width: 50px; /* 이미지 크기를 조절합니다 */
-    height: auto; /* 비율을 유지하면서 크기 조정 */
-    vertical-align: middle; /* 이미지와 텍스트가 같은 라인에 오도록 합니다 */
-}
-
-.contact-info-title{
-    color: white !important;
-    font-size: 12px !important;
-}
-
-.contact-info a {
-    color: gray;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    margin-left: 12px;
-}
-
-.contact-info a:visited{
-    color: gray;
-}
-
-.contact-info a:hover {
-    color: gray;
-    transition: 0.3s;
-}
-
-
-/* 스마트폰 최적화 관련 */
-
 @media (max-width: 480px) {
     body{
         background-image: url('../images/DING.gif');
