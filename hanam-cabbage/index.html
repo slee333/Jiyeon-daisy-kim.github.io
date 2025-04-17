@@ -8,10 +8,10 @@
 	<!-- Espacio Novo 글씨체-->
 	<link rel="stylesheet" href="assets/css/espacio_novo_font.css">
 	
-	<link rel="stylesheet" type="text/css" href="hanam-cabbage/css/haenam_cabbage_style.css">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="css/haenam_cabbage_style.css">
+	<link rel="icon" href="../assets/images/favicon.png" type="image/png">
 
-	<script src="assets/js/nav-bar.js" defer></script>
+	<script src="../assets/js/nav-bar-for-file-structure.js" defer></script>
 
 	
 
@@ -41,7 +41,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   
-	<script src="assets/js/nav-bar.js" defer></script>
+	<script src="../assets/js/nav-bar.js" defer></script>
 
 </head>
 
@@ -79,19 +79,19 @@
 		
 		<div class="dashboard">
 			<div class ="zone1">
-				<img src="hanam-cabbage/img/Haenam_title_brush_green.png">
+				<img src="img/Haenam_title_brush_green.png">
 			</div>
 			<div class ="zone2">
 				<div class="swiper">
 					<div class="swiper-wrapper">
 					  <div class="swiper-slide">
-						<img src="hanam-cabbage/img/Haenam_Low_002.jpg" alt="이미지1" />
+						<img src="img/Haenam_Low_002.jpg" alt="이미지1" />
 					  </div>
 					  <div class="swiper-slide">
-						<img src="hanam-cabbage/img/Haenam_Low_001.jpg" alt="이미지1" />
+						<img src="img/Haenam_Low_001.jpg" alt="이미지1" />
 					  </div>
 					  <div class="swiper-slide">
-						<img src="hanam-cabbage/img/Haenam_Low_003.jpg" alt="이미지1" />
+						<img src="img/Haenam_Low_003.jpg" alt="이미지1" />
 					  </div>
 					</div>
 				
@@ -129,7 +129,7 @@
 				</div>
 				<div class ="zone3-2">
 					<div class="zone3-2-1">
-						<img src="hanam-cabbage/img/Haenam_Poster_Low.jpg" id="posterImg" style="cursor: pointer;">
+						<img src="img/Haenam_Poster_Low.jpg" id="posterImg" style="cursor: pointer;">
 					</div>
 					<div class="zone3-2-2">
 						<div class="zone3-2-2-1">
@@ -152,7 +152,7 @@
 			<div class ="zone4">
 				<div class ="zone4-1">
 					<p>
-						Trailer
+						TRAILER
 					</p>
 				</div>
 				<div class="trailer-video">
@@ -173,15 +173,18 @@
 				<a class = "contact-info-title"><strong>Daisyeon</strong></a>
 				
 				<a href="https://www.instagram.com/daisy__yeon/" target="_blank">Instagram</a>
-				<a href="quickContact.html">Email</a>
+				<a href="../quick-contact/">Email</a>
 				<a href="https://www.youtube.com/@daisy_yeon">Youtube</a>
 			</p>
 		</footer>
 	</div>
 
 	<!-- 포스터 확대용 모달 -->
-	<div id="posterModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
-	<img id="posterModalImg" src="" style="max-width:90%; max-height:90%; border-radius:0px; box-shadow:0 0 10px white;">
+	<div id="posterModal" style="display:none; position:fixed; top:0; left:0;
+	  width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center;
+	  align-items:center; z-index:9999;">
+		<img id="posterModalImg" src="" style="max-width:90%; max-height:90%;
+		  border-radius:0px; box-shadow:0 0 30px rgba(255, 255, 255, 0.1);">
   	</div>
 	
 	<script>

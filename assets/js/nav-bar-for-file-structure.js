@@ -1,10 +1,31 @@
 (function(d) {
   var config = {
-  kitId: 'qme8xbq',
-  scriptTimeout: 3000,
-  async: true
+    kitId: 'qme8xbq',
+    scriptTimeout: 3000,
+    async: true
   },
-  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  h = d.documentElement,
+  t = setTimeout(function() {
+    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+  }, config.scriptTimeout),
+  tk = d.createElement("script"),
+  f = false,
+  s = d.getElementsByTagName("script")[0],
+  a;
+
+  h.className += " wf-loading";
+  tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+  tk.async = true;
+  tk.onload = tk.onreadystatechange = function() {
+    a = this.readyState;
+    if (f || (a && a !== "complete" && a !== "loaded")) return;
+    f = true;
+    clearTimeout(t);
+    try {
+      Typekit.load(config);
+    } catch (e) {}
+  };
+  s.parentNode.insertBefore(tk, s);
 })(document);
 
 class NavBar extends HTMLElement {
@@ -61,6 +82,8 @@ class NavBar extends HTMLElement {
         }
 
         .nav-menu {
+          display: inline-flex;
+          align-items: center;
           font-size: 18px;
           color: #C9C9C9;
           font-weight: bold;
@@ -71,9 +94,10 @@ class NavBar extends HTMLElement {
           font-weight: bold;
         }
 
-        .triangle {
-          font-size: 10px;
-          margin-left: 3px;
+        .flower-icon {
+          width: 30px;
+          height: 30px;
+          display: inline-block;
         }
 
         .dropdown-content {
@@ -104,45 +128,56 @@ class NavBar extends HTMLElement {
       </style>
 
       <nav class="navigator">
-        <h3 class="site-name"><a href="../index.html">Daisyeon</a></h3>
+        <h3 class="site-name"><a href="/">Daisyeon</a></h3>
         <ul>
-          <li><a href="../index.html" class="nav-menu">HOME</a></li>
-          <li><a href="../intoduction.html" class="nav-menu">Introduction</a></li>
-          <li><a href="../art-work/index.html" class="nav-menu">Artwork</a></li>
+          <li><a href="/" class="nav-menu">HOME</a></li>
+          <li><a href="/introduction/" class="nav-menu">Introduction</a></li>
+          <li><a href="/art-work/" class="nav-menu">Artwork</a></li>
           <li class="dropdown">
-            <a href="../film.html" class="nav-menu">Film<span class="triangle">▼</span></a>
+            <a href="/film/" class="nav-menu">
+              Film
+              <img class="flower-icon" src="../assets/images/daisy_flower.png" alt="flower icon" />
+            </a>
             <div class="dropdown-content">
-              <a href="../mejfk-youicn/index.html">Me:JFK, You:ICN</a>
-              <a href="../haenamCabbage.html">Haenam Cabbage</a>
-              <a href="../suddenlyHome.html">Suddenly, Home</a>
-              <a href="../caseOfR.html">Case of 'r'</a>
+              <a href="/mejfk-youicn/">Me:JFK, You:ICN</a>
+              <a href="/hanam-cabbage/">Haenam Cabbage</a>
+              <a href="/suddenly-home/">Suddenly, Home</a>
+              <a href="/case-of-R/">Case of 'r'</a>
             </div>
           </li>
         </ul>
       </nav>
     `;
 
-    // JS는 HTML 넣은 다음에 실행
-    const filmRelatedPages = [
-      'film.html',
-      'mejfk-youicn/index.html',
-      'haenamCabbage.html',
-      'suddenlyHome.html',
-      'caseOfR.html'
+    // 현재 경로 얻기
+    const path = window.location.pathname;
+
+    // Film 관련 하위 페이지
+    const filmPages = [
+      '/film/',
+      '/mejfk-youicn/',
+      '/hanam-cabbage/',
+      '/suddenly-home/',
+      '/case-of-R/'
     ];
 
-    const fullPath = window.location.pathname.replace(/^.*\/([^/]+\/[^/]+)$/, '$1');
-      // fullPath 예: mejfk-youicn/index.html 또는 haenamCabbage.html
-
     const links = shadow.querySelectorAll('.nav-menu');
+
     links.forEach(link => {
       const href = link.getAttribute('href');
-
-      if (href === '../film.html' && filmRelatedPages.includes(fullPath)) {
+      const normalizedHref = href.endsWith('/') ? href : href + '/';
+      const normalizedPath = path.endsWith('/') ? path : path + '/';
+    
+      // HOME - 정확히 루트일 때만
+      if (normalizedHref === '/' && (path === '/' || path.endsWith('index.html'))) {
         link.classList.add('active');
       }
-
-      if (href === `../${fullPath}`) {
+      // FILM 및 관련 하위 페이지
+      else if (normalizedHref === '/film/' && filmPages.some(p => normalizedPath.startsWith(p))) {
+        link.classList.add('active');
+      }
+      // 그 외 메뉴들 (HOME 제외)
+      else if (normalizedHref !== '/' && normalizedPath.startsWith(normalizedHref)) {
         link.classList.add('active');
       }
     });

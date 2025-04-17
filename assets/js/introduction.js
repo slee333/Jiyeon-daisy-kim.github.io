@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     function createFlower() {
         const flower = document.createElement("img");
-        flower.src = "assets/images/daisy_flower.png"; // 꽃 이미지 경로
+        flower.src = "../assets/images/daisy_flower.png"; // 꽃 이미지 경로
         flower.classList.add("flower");
 
         // 랜덤 위치 및 크기 설정

@@ -1,176 +1,187 @@
 (function(d) {
   var config = {
-  kitId: 'qme8xbq',
-  scriptTimeout: 3000,
-  async: true
+    kitId: 'qme8xbq',
+    scriptTimeout: 3000,
+    async: true
   },
-  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  h = d.documentElement,
+  t = setTimeout(function() {
+    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+  }, config.scriptTimeout),
+  tk = d.createElement("script"),
+  f = false,
+  s = d.getElementsByTagName("script")[0],
+  a;
+
+  h.className += " wf-loading";
+  tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+  tk.async = true;
+  tk.onload = tk.onreadystatechange = function() {
+    a = this.readyState;
+    if (f || (a && a !== "complete" && a !== "loaded")) return;
+    f = true;
+    clearTimeout(t);
+    try {
+      Typekit.load(config);
+    } catch (e) {}
+  };
+  s.parentNode.insertBefore(tk, s);
 })(document);
 
 
 class NavBar extends HTMLElement {
-    constructor() {
-      super();
-  
-      const shadow = this.attachShadow({ mode: 'open' });
-  
-      // 현재 페이지가 index.html인지 확인
-      const isIndexPage = window.location.pathname.endsWith('index.html');
-  
-      shadow.innerHTML = `
-        <style>
-          .navigator {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            position: fixed;
-            width: 80%;
-            font-family: 'Pretendard', sans-serif;
-          }
-  
-          .site-name {
-            margin: 0;
-            font-size: 24px;
-            font-family: 'Espacio Novo', sans-serif;
-            color: ${isIndexPage ? 'white' : 'black'};
-          }
-  
-          .site-name a {
-            color: ${isIndexPage ? 'white' : 'black'};
-            text-decoration: none;
-          }
-  
-          .navigator ul {
-            display: flex;
-            margin: 0%;
-            padding: 0%;
-            flex-wrap: nowrap;
-          }
-  
-          .navigator li {
-            display: inline;
-            align-self: center;
-            margin-left: 3%;
-            margin-right: 3%;
-          }
-  
-          .navigator a {
-            text-decoration: none;
-          }
-  
-          .navigator a:hover {
-            color: gray;
-            transition: 0.3s;
-          }
-  
-          .nav-menu {
-            display: inline-flex;        /* 핵심! 텍스트와 이미지를 가로 정렬 */
-            align-items: center;         /* 세로 정렬 */
-            font-size: 18px;
-            font-weight: bold;
-            color: ${isIndexPage ? 'white' : '#C9C9C9'};
-            text-decoration: none;
-            
-          }
+  constructor() {
+    super();
 
-          .nav-menu.active {
-            color: black;
-            font-weight: bold; /* 선택사항: 강조 효과 */
-          }
-  
-          .flower-icon {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-          }
-  
-          .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-          }
-  
-          .dropdown:hover .dropdown-content {
-            display: block;
-          }
-  
-          .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-            padding-left: 5%;
-          }
-  
-          .dropdown-content a:hover {
-            background-color: #f1f1f1;
-          }
-        </style>
-  
-        <nav class="navigator">
-          <h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
-          <ul>
-            <li><a href="/index.html" class="nav-menu">HOME</a></li>
-            <li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
-            <li><a href="art-work/index.html" class="nav-menu">Artwork</a></li>
-            <li class="dropdown">
-              <a href="film.html" class="nav-menu">
-                Film
-                <img class="flower-icon" src="assets/images/daisy_flower.png" alt="flower icon" />
-              </a>
-              <div class="dropdown-content">
-                <a href="mejfk-youicn/index.html">Me:JFK, You:ICN</a>
-                <a href="haenamCabbage.html">Haenam Cabbage</a>
-                <a href="suddenlyHome.html">Suddenly, Home</a>
-                <a href="caseOfR.html">Case of 'r'</a>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      `;
+    const shadow = this.attachShadow({ mode: 'open' });
 
-
-      const filmRelatedPages = [
-        'film.html',
-        'mejfk-youicn/index.html',
-        'haenamCabbage.html',
-        'suddenlyHome.html',
-        'caseOfR.html'
-      ];
-
-      const currentPage = window.location.pathname.split('/').slice(-2).join('/'); // 폴더/파일명 모두 포함
-      const simplePage = window.location.pathname.split('/').pop(); // 파일명만 (예: caseOfR.html)
-
-      // nav-menu 링크에 active 클래스 추가
-      const links = shadow.querySelectorAll('.nav-menu');
-      links.forEach(link => {
-        const href = link.getAttribute('href');
-      
-        // FILM 관련 페이지는 film 메뉴에 active 부여
-        if (href === 'film.html' && (filmRelatedPages.includes(currentPage) || filmRelatedPages.includes(simplePage))) {
-          link.classList.add('active');
+    shadow.innerHTML = `
+      <style>
+        .navigator {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 1000;
+          position: fixed;
+          width: 80%;
+          font-family: 'Pretendard', sans-serif;
         }
-      
-        // HOME 페이지는 다양한 형태로 접근 가능하므로 조건 보완
-        if (
-          (href === '/index.html' || href === 'index.html') &&
-          (simplePage === '' || simplePage === 'index.html')
-        ) {
-          link.classList.add('active');
+
+        .site-name {
+          margin: 0;
+          font-size: 24px;
+          font-family: 'Espacio Novo', sans-serif;
+          color: white;
         }
-      
-        // 일반 페이지 (intro, artwork 등)
-        if (href === simplePage) {
-          link.classList.add('active');
+
+        .site-name a {
+          color: white;
+          text-decoration: none;
         }
-      });
-      
+
+        .navigator ul {
+          display: flex;
+          margin: 0%;
+          padding: 0%;
+          flex-wrap: nowrap;
+        }
+
+        .navigator li {
+          display: inline;
+          align-self: center;
+          margin-left: 3%;
+          margin-right: 3%;
+        }
+
+        .navigator a {
+          text-decoration: none;
+        }
+
+        .navigator a:hover {
+          color: gray;
+          transition: 0.3s;
+        }
+
+        .nav-menu {
+          display: inline-flex;
+          align-items: center;
+          font-size: 18px;
+          font-weight: bold;
+          color: white;
+          text-decoration: none;
+        }
+
+        .nav-menu.active {
+          color: black;
+          font-weight: bold;
+        }
+
+        .flower-icon {
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          font-size: 14px;
+          padding-left: 5%;
+        }
+
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
+      </style>
+
+      <nav class="navigator">
+        <h3 class="site-name"><a href="/">Daisyeon</a></h3>
+        <ul>
+          <li><a href="/" class="nav-menu">HOME</a></li>
+          <li><a href="/introduction/" class="nav-menu">Introduction</a></li>
+          <li><a href="/art-work/" class="nav-menu">Artwork</a></li>
+          <li class="dropdown">
+            <a href="/film/" class="nav-menu">
+              Film
+              <img class="flower-icon" src="assets/images/daisy_flower.png" alt="flower icon" />
+            </a>
+            <div class="dropdown-content">
+              <a href="/mejfk-youicn/">Me:JFK, You:ICN</a>
+              <a href="/hanam-cabbage/">Haenam Cabbage</a>
+              <a href="/suddenly-home/">Suddenly, Home</a>
+              <a href="/case-of-R/">Case of 'r'</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    `;
+
+    const links = shadow.querySelectorAll('.nav-menu');
+    const path = window.location.pathname;
+
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      const normalizedHref = href.endsWith('/') ? href : href + '/';
+      const normalizedPath = path.endsWith('/') ? path : path + '/';
+
+      // HOME
+      if (normalizedHref === '/' && (path === '/' || path.endsWith('index.html'))) {
+        link.classList.add('active');
+      }
+      // FILM + 하위 페이지들
+      else if (
+        href === '/film/' &&
+        (
+          path.startsWith('/film') ||
+          path.startsWith('/mejfk-youicn') ||
+          path.startsWith('/hanam-cabbage') ||
+          path.startsWith('/suddenly-home') ||
+          path.startsWith('/case-of-R')
+        )
+      ) {
+        link.classList.add('active');
+      }
+      // 나머지 메뉴들 (Introduction, Artwork)
+      else if (normalizedPath.startsWith(normalizedHref)) {
+        link.classList.add('active');
+      }
+    });
   }
 }
 

@@ -12,7 +12,6 @@ body{
      font-family: 'Montserrat', sans-serif;
  }
  
- 
  .contact-info {
      margin-top: 20px;
      padding: 0.8%;
@@ -62,12 +61,8 @@ body{
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
      line-height: 20px;
  }
- 
-
 
 /* 여기까지는 기본 세팅 */
-
-
 
 .dashboard{
     margin-top: 3%;
@@ -98,7 +93,6 @@ body{
     
 }
 
-
 .zone3 {
     margin-left: 10%;
     margin-right: 10%;
@@ -118,9 +112,6 @@ body{
 .zone3-1-1{
     font-size: 16px;
 }
-
-
-
 
 .zone3-2{
     width: 50%;
@@ -158,7 +149,7 @@ body{
 
 .trailer-video {
     position: relative;
-    width: 82.55%;
+    width: 82.5%;
     aspect-ratio: 16 / 9; /* 최신 CSS 비율 유지 방식 */
     overflow: hidden;
 }
