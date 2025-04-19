@@ -2,10 +2,15 @@
   body {
     margin: 0;
     padding: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Pretendad', sans-serif;
     line-height: 1.6;
     overflow-y: auto;
     max-width: 100%;
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
+  
   }
 
   .detialImage {
@@ -22,7 +27,15 @@
     margin: 0 auto;
   }
 
-  .document p {
+  .title p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .textBody p {
+    margin-top: 0;
     font-size: 16px;
     color: #333;
     word-break: keep-all;
@@ -30,7 +43,5 @@
   }
 
 
-body::-webkit-scrollbar{
-  display: none;
 
-}
+
