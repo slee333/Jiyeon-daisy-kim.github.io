@@ -1,44 +1,58 @@
-body{
+body {
     background-color: white;
- }
- 
-.frame{
-     margin: 2% 10%;
-     display: flex;
-     flex-direction: column;
-     font-family: 'Montserrat', sans-serif;
-}
-
-.artwork-layout {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* 전체 페이지 스크롤 방지 */
+  }
+  
+  .frame {
+    margin: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .artwork-layout {
     display: flex;
     width: 100%;
-    overflow: hidden;
-}
+    height: calc(100vh - 100px); /* 헤더(nav-bar) 높이 감안해서 조절 */
+    overflow: hidden; /* 내부 스크롤만 허용 */
+  }
   
-.image-column {
+  .scroll-area {
+    height: 100%;
+    overflow-y: auto; /* 스크롤 활성화 */
+    scrollbar-width: thin;
+  }
+  
+  /* 왼쪽 이미지 영역 */
+  .image-column {
     width: 307px;
-    overflow-y: auto;
     padding-top: 3vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
     scrollbar-width: none;
-}
-
-.image-column img {
-    width: auto;         /* 너비는 칼럼에 꽉 차게 */
-    height: 200px;       /* 세로 고정 */
-    object-fit: contain; /* 이미지 비율 유지 + 잘리지 않게 */
-
-}
-
-.image-column::-webkit-scrollbar {
-    display: none;
-}
+  }
   
-.side-column {
+  .image-column img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  /* 오른쪽 설명 영역 */
+  .side-column {
     width: calc(100% - 307px);
     padding: 2%;
     background-color: white;
-}
+  }
+
+  .side-column iframe {
+    width: 100%;
+    height: 100%;
+
+    
+    overflow-y: auto; /* iframe 안 콘텐츠가 클 경우 스크롤 가능 */
+  }

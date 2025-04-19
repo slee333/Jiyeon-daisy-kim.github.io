@@ -34,53 +34,37 @@
 	  <nav-bar></nav-bar>
 	</div>
 	<main class="artwork-layout">
-		<section class="image-column" id="imageColumn">
+		<section class="image-column scroll-area" id="imageColumn">
 		  <!-- 이미지들이 여기에 계속 추가됨 -->
 		</section>
 	  
-		<section class="side-column">
-		  <!-- 설명 또는 비어 있는 공간 -->
+		<section class="side-column scroll-area">
+			<iframe id="detailViewer" src="" frameborder="0"></iframe>
 		</section>
 	</main>
   
 
 	<script>
 		const imageColumn = document.getElementById('imageColumn');
+		const iframe = document.getElementById('detailViewer')
 	  
-		const initialImages = [
-		  'img/i-really-hate-birthday-feelings/@back.png',
-		  'img/Sausage Twig.jpg'
-		];
-	  
-		// 초기 이미지 렌더링
-		function renderInitialImages() {
-		  initialImages.forEach(src => {
-			const img = document.createElement('img');
-			img.src = src;
-			img.classList.add('art-image');
-			imageColumn.appendChild(img);
-		  });
-		}
-	
-	  
-		// 초기 이미지 먼저 로드
-		renderInitialImages();
-	  
-		// 스크롤 감지용 센티넬
-		const sentinel = document.createElement('div');
-		sentinel.id = 'sentinel';
-		imageColumn.appendChild(sentinel);
-	  
-		// 인터섹션 옵저버 등록
-		const observer = new IntersectionObserver(entries => {
-		  if (entries[0].isIntersecting) {
-			loadMoreImages();
-		  }
-		});
-	  
-		observer.observe(sentinel);
 
-		
+		fetch('data/imageMap.json')
+			.then(res => res.json())
+			.then(images => {
+				images.forEach(item => {
+				const img = document.createElement('img');
+				img.src = item.src;
+				img.classList.add('art-image');
+				img.style.cursor = 'pointer';
+				img.addEventListener('click', () => {
+					iframe.src = item.page;
+				});
+				imageColumn.appendChild(img);
+			});
+		});
+
+
 	  </script>
 </body>
 </html>
