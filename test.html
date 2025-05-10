@@ -4,185 +4,108 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Daisyeon</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/film_style.css">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/png">
-	<style>
-		/* 기존 CSS에 포함된 템플릿 스타일은 JS에서 정의함 */
-	</style>
+
+	<!-- Espacio Novo 글씨체-->
+	<link rel="stylesheet" href="../assets/css/espacio_novo_font.css">
+
+	<!-- pretendad 글씨체 -->
+	<script src="../assets/js/pretendad-font.js"></script>
+
+	<!-- montserrat 글씨체 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- favicon, css-->
+	<link rel="stylesheet" type="text/css" href="assets/css/test.css">
+	<link rel="icon" href="../assets/images/favicon.png" type="image/png">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
+
 <body>
-	<div class="fixed-text">
-		<p><strong>My life</strong> is an adventure,<br>
-		which can save <strong>A person</strong>’s world.<br>
-		<i>So Film it, as to live.</i></p>
-		<p>Daisy for the world<br>
-		Yeon for the root</p>
+	<div class="detialImage">
+		<img id="frontImg" src="art/img/i-really-hate-birthday-feelings/@front.png" alt="Front Image" usemap="#image-map">
+		<img src="img/i-really-hate-birthday-feelings/irhbf_back.png" alt="Back Image">
 	</div>
 
-	<div class="frame">
-		<nav class="navigator">
-			<h3 class="site-name"><a href="index.html">Daisyeon</a></h3>
-			<ul>
-				<li><a href="index.html" class="nav-menu">HOME</a></li>
-				<li><a href="intoduction.html" class="nav-menu">Introduction</a></li>
-				<li class="dropdown">
-					<a href="film.html" class="nav-menu">FILM<span class="triangle">▼</span></a>
-					<div class="dropdown-content">
-						<a href="mejfk-youicn/index.html">Me:JFK, You:ICN</a>
-						<a href="haenamCabbage.html">Haenam Cabbage</a>
-						<a href="suddenlyHome.html">Suddenly, Home</a>
-						<a href="caseOfR.html">Case of 'r'</a>
-					</div>
-				</li>
-			</ul>
-		</nav>
+	<!-- 이미지 맵 정의 -->
 
-		<div class="document">
-			<!-- 여기부터 film-card 컴포넌트 사용 -->
-			<film-card
-				img="assets/images/JFK_You_ICN4.png"
-				subtitle="Short Film, Drama, 17 mins, 2025 USA, KR"
-				title="Me:JFK, You: ICN"
-				link="mejfk-youicn/index.html"
-				desc="A young flight attendant Ina is suffering..."
-				extra="">
-			</film-card>
 
-			<film-card
-				img="assets/images/Haenam1.png"
-				subtitle="Short Film, Drama, 17mm, KR"
-				title="Haenam Cabbage"
-				link="haenamCabbage.html"
-				desc="Sua, a college student, visited a kitchen with full of cabbage..."
-				extra="">
-			</film-card>
-
-			<film-card
-				img="assets/images/there_is_a_fly.webp"
-				subtitle="Short Film, Experimental, Super 16mm, USA"
-				title="THERE IS A FLY"
-				link="#"
-				desc="There is a fly. The boy is trying to find it. / 3 min"
-				extra="2024 Big Shoulder’s International Student Film Festival Selection<br>(Best Experimental Film winner)">
-			</film-card>
-
-			<film-card
-				img="assets/images/suddenly-home.webp"
-				subtitle="Short Film, Narrative, South Korea"
-				title="Suddenly, Home"
-				link="suddenlyHome.html"
-				desc="Seungyeon visits home for the first time... / 3 min"
-				extra="Directed and written by Jiyeon Kim<br>Sponsored by 2024 Korean Film Council (7000$)">
-			</film-card>
-
-			<film-card
-				img="assets/images/rosetta-final-prores422.png"
-				subtitle="Short Film"
-				title="Case of 'r'"
-				link="caseOfR.html"
-				desc="Two people disappeared from a university..."
-				extra="">
-			</film-card>
-		</div>
-
-		<footer class="contact-info">
-			<p>
-				<img class="footer-image" src="assets/images/DAISYEON_LOGO_orange.png">
-				<a class="contact-info-title"><strong>Daisyeon</strong></a>
-				<a href="https://www.instagram.com/daisy__yeon/" target="_blank">Instagram</a>
-				<a href="quickContact.html">Email</a>
-				<a href="https://www.youtube.com/@daisy_yeon">Youtube</a>
-			</p>
-		</footer>
+	<map name="image-map">
+		<area 
+		  shape="rect"
+		  coords="48,235,166,391"
+		  data-img="art/img/i-really-hate-birthday-feelings/Elements/Hello_from_the_space1.png"
+		  alt="Hello from the space">
+	  
+		<area 
+		  shape="rect"
+		  coords="528,130,758,281"
+		  data-img="art/img/i-really-hate-birthday-feelings/Elements/Squid_game2.png"
+		  alt="Squid Game">
+	</map>
+	  
+	<!-- 포스터 확대용 모달 -->
+	<div id="posterModal" style="display:none; position:fixed; top:0; left:0;
+		width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center;
+		align-items:center; z-index:9999;">
+		<img id="posterModalImg" src="" style="max-width:90%; max-height:90%;
+			border-radius:0px; box-shadow:0 0 30px rgba(255, 255, 255, 0.1);">
 	</div>
-
-	<template id="film-card-template">
-		<style>
-			.film-container {
-				padding-top: 1.5%;
-				display: flex;
-				flex-direction: row;
-				margin-left: 10%;
-				margin-right: 15%;
-				padding-bottom: 1.5%;
-				border-bottom: 0.5px solid lightgray;
-				border-top: 0.5px solid lightgray;
-			}
-			img {
-				margin-left: 3%;
-				max-width: 45%;
-				height: auto;
-			}
-			.text-zone {
-				margin-left: 10%;
-				margin-right: 3%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-			}
-			.text-zone-1 {
-				font-size: 12px;
-				font-style: italic;
-				font-weight: 400;
-				margin-bottom: 0;
-			}
-			.text-zone-2 {
-				font-size: 42px;
-			}
-			.text-zone-2 a {
-				color: black;
-				text-decoration: none;
-			}
-			.text-zone-2 a:hover {
-				color: darkgray;
-			}
-			.text-zone-3 {
-				font-size: 12px;
-				line-height: 20px;
-			}
-			.text-zone-4 {
-				font-size: 10px;
-				font-style: italic;
-				line-height: 20px;
-			}
-		</style>
-		<div class="film-container">
-			<img />
-			<div class="text-zone">
-				<h5 class="text-zone-1"></h5>
-				<h1 class="text-zone-2"><a></a></h1>
-				<div class="text-zone-3"></div>
-				<div class="text-zone-4"></div>
-			</div>
-		</div>
-	</template>
 
 	<script>
-		class FilmCard extends HTMLElement {
-			constructor() {
-				super();
-				const shadow = this.attachShadow({ mode: 'open' });
-				const template = document.getElementById('film-card-template');
-				const clone = template.content.cloneNode(true);
-				shadow.appendChild(clone);
-
-				const img = shadow.querySelector('img');
-				const subtitle = shadow.querySelector('.text-zone-1');
-				const titleLink = shadow.querySelector('.text-zone-2 a');
-				const desc = shadow.querySelector('.text-zone-3');
-				const extra = shadow.querySelector('.text-zone-4');
-
-				img.src = this.getAttribute('img');
-				img.alt = this.getAttribute('title');
-				subtitle.textContent = this.getAttribute('subtitle');
-				titleLink.textContent = this.getAttribute('title');
-				titleLink.href = this.getAttribute('link');
-				desc.textContent = this.getAttribute('desc');
-				extra.innerHTML = this.getAttribute('extra') || '';
+		document.addEventListener('DOMContentLoaded', function () {
+		  const modal = document.getElementById('posterModal');
+		  const modalImg = document.getElementById('posterModalImg');
+		
+		  // 모든 area 태그에 이벤트 부여
+		  document.querySelectorAll('area[data-img]').forEach(function (area) {
+			area.addEventListener('click', function (e) {
+			  e.preventDefault(); // 링크 이동 방지
+			  const imgSrc = this.dataset.img;
+			  modalImg.src = imgSrc;
+			  modal.style.display = 'flex';
+			});
+		  });
+		
+		  // 모달 닫기
+		  modal.addEventListener('click', function (e) {
+			if (e.target === modal) {
+			  modal.style.display = 'none';
 			}
-		}
-
-		customElements.define('film-card', FilmCard);
+		  });
+		});
 	</script>
+
+
+
+	<div class="document">
+		<div class="title">
+			<p>I really hate birthday feeling, 2025</p>
+		</div>
+		<div class="textBody">
+			<p>
+				생일 기분 정말 싫어
+				<br><br>Digital photography, inkjet print, scotch tape, embroidery thread on paper
+				<br>Birthdays are just proof that a year has ended well, but somehow, 
+				<br>I feel like they should be special. 
+				<br>The feeling of being surrounded by many people 
+				<br>and having to open presents makes me excited and then depressed. 
+				<br>I drew digitally a scene of a party with many people on paper. 
+				<br>The people were alone, lonely, and quiet.
+				<br><br>
+				The title is inspired by the song ‘Birthday Mood’ by my favorite band, Sister's Barbershop. 
+				<br><br>
+				생일은 1년을 잘 마쳤다는 증거에 불과한데 왠지 특별해야 할 것 같다.
+				<br>많은 사람들에게 둘러싸여 선물을 뜯어야 할 것 같은 생일 날의 기분은 나를 들뜨게 만들었다가 침울하게 만든다.
+				<br>다양한 사람들이 함께하는 파티의 장면을 종이 위에 디지털로 그렸다.
+				<br>혼자, 그리고 외롭고 조용하게.
+				<br><br>
+				제목은 좋아하는 밴드 ‘언니네 이발관’의 노래 ‘생일 기분’에서 영감을 받았다. 
+			</p>
+		</div>
+	</div>
+
 </body>
 </html>
