@@ -1,113 +1,200 @@
-body{
-    background-color: white;
-    overflow-x: hidden ;
-    overflow-y: hidden;
+body {
+  background-color: white;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color: #1c1c1c;
+  margin: 0;
 }
 
-.frame{
-    margin: 2% 10%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+.frame {
+  margin: 2% 10%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-
-
-/*  ------------------------------------- */
-
-@media (max-width: 768px) {
-    .document {
-        flex-direction: column; /* 세로 정렬로 변경 */
-        justify-content: center; /* 수직 가운데 정렬 */
-        align-items: center; /* 수평 가운데 정렬 */
-    }
-
-    #introduction-picture {
-        width: 100%; /* 이미지의 너비를 100%로 설정 */
-        margin: 0 0 20px 0; /* 이미지 아래쪽에만 여백 추가 */
-    }
-
-    .introduction {
-        text-align: center; /* 텍스트를 중앙 정렬 */
-    }
+.document {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 7%;
+  margin-left: 10%;
+  margin-right: 15%;
 }
 
-.document{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 7%;
-    margin-left: 10%;
-    margin-right: 15%;
+#introduction-picture {
+  width: 42%;
+  margin-right: 60px;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
-#introduction-picture{
-    width: 42%;
-    margin-right: 60px;
+.introduction {
+  flex: 1;
 }
 
-.document p{
-    font-size: 13px;
+.head-line {
+  color: black;
+}
+
+.introduction p {
+  font-size: 13px;
+  color: black;
 }
 
 .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
 }
 
-/* a 태그의 기본 상태 */
 .contact a {
-    color: black;
-    text-decoration: none;
-    padding: 8px 16px;
-    transition: background-color 0.3s ease;
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
 }
 
-.contact a:hover{
-    background-color: darkgray;
+.contact a:hover {
+  background-color: darkgray;
 }
-
-.contact a:visited{
-    color: black;
-}
-
 
 .contact p {
-    font-size: 13px;
+  font-size: 13px;
+  margin-top: 16px;
 }
 
+.cv-sections {
+  width: 80%;
+  max-width: 1100px;
+  margin: 120px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-bottom: 80px;
+}
 
+.cv-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.4fr) minmax(0, 0.6fr);
+  gap: 40px;
+}
 
+.cv-label {
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8b7764;
+  margin: 0;
+}
 
-/* 데이지 꽃 떨어지는 자바스크립트*/
+.cv-details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 620px;
+}
+
+.cv-entry {
+  border-bottom: 1px solid #f0e9e1;
+  padding-bottom: 16px;
+}
+
+.cv-entry:last-child {
+  border-bottom: none;
+}
+
+.cv-entry header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.cv-entry-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cv-entry-meta {
+  font-size: 13px;
+  color: #7e7e7e;
+}
+
+.cv-entry p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4d4d4d;
+}
+
+@media (max-width: 1024px) {
+  .frame {
+    margin: 24px;
+  }
+
+  .document {
+    flex-direction: column;
+    margin: 7% 0 0 0;
+    gap: 40px;
+  }
+
+  #introduction-picture {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .introduction h1 {
+    font-size: 44px;
+  }
+
+  .cv-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .frame {
+    margin: 16px;
+  }
+
+  .introduction h1 {
+    font-size: 36px;
+  }
+
+  .cv-entry header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @keyframes fall {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
-    }
-    90% {
-        opacity: 1; /* 거의 다 떨어질 때까지 보이게 */
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0; /* 바닥 근처에서 사라지게 */
-    }
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .flower {
-    position: fixed; /* 화면 내에서만 떨어지도록 설정 */
-    top: -50px; /* 화면 위에서 시작 */
-    width: 40px;
-    height: 40px;
-    pointer-events: none;
-    animation: fall linear infinite;
-    object-fit: contain; /* 이미지 비율 유지 */
-    z-index: -1; /* 본문 뒤로 배치 */
+  position: fixed;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  animation: fall linear infinite;
+  object-fit: contain;
+  z-index: -1;
 }
