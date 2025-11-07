@@ -1,0 +1,8 @@
+<svg width="600" height="900" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#f4f0ec"/>
+  <rect x="40" y="40" width="520" height="150" fill="#e0d7cf"/>
+  <rect x="40" y="220" width="520" height="600" fill="#ffffff" stroke="#d0c7bf" stroke-width="2"/>
+  <text x="50" y="120" font-size="48" font-family="'Montserrat', Arial, sans-serif" fill="#9c8b7a">PRESS</text>
+  <text x="50" y="300" font-size="28" font-family="'Montserrat', Arial, sans-serif" fill="#c0b2a3">Screenshot Placeholder</text>
+  <text x="50" y="360" font-size="18" font-family="'Montserrat', Arial, sans-serif" fill="#9c8b7a">Replace with real article capture</text>
+</svg>

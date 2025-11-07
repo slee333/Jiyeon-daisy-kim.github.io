@@ -51,6 +51,8 @@ class FooterBar extends HTMLElement {
             <a href="https://www.instagram.com/daisy__yeon/" target="_blank">Instagram</a>
             <a href="/quick-contact/">Email</a>
             <a href="https://www.youtube.com/@daisy_yeon">Youtube</a>
+            <a href="https://medium.com/@daisyeonfilm">Medium</a>
+            <a href="https://letterboxd.com/daisyeon/">LetterBoxd</a>
           </p>
         </footer>
       `;
